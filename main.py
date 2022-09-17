@@ -15,7 +15,8 @@ def print_rss_entry(entry: dict) -> None:
     print(const.BOLD + entry["title"] + const.END)
     if entry.get("summary"):
         print(entry["summary"])
-    print("Link To Article: " + entry["link"])
+    if entry.get("link"):
+        print("Link To Article: " + entry["link"])
 
 
 def print_rss_feed_details(rss_url: str) -> None:
